@@ -4,6 +4,7 @@ import App from './App.tsx'
 import './global.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Home } from './routes/Home/Home.tsx'
+import { Pokedex } from './routes/Pokedex/index.tsx'
 
 const router = createBrowserRouter ([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter ([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/Pokedex",
+        element: <Pokedex />,
       },
     ],
   },

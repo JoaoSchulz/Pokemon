@@ -30,11 +30,19 @@
     line-height: 29px;
 }
 
-.menu_li :hover{
-    text-decoration: underline;
+.menu_li_a {
+    color: #111;
+    text-decoration: none;
+    padding-left: 20px;
 }
 
-.menu_li_a {
+.active {
+    color: #111;
+    text-decoration: underline;
+    padding-left: 20px;
+}
+
+.inactive {
     color: #111;
     text-decoration: none;
     padding-left: 20px;
