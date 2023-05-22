@@ -5,6 +5,7 @@ import './global.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Home } from './routes/Home/Home.tsx'
 import { Pokedex } from './routes/Pokedex/index.tsx'
+import { Erro } from './routes/Error/Erro.tsx'
 
 const router = createBrowserRouter ([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter ([
         path: "/Pokedex",
         element: <Pokedex />,
       },
+      {
+        path:'/Legendaries',
+        element: <Erro/>
+      }
     ],
   },
 ]);
