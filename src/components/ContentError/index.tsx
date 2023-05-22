@@ -14,7 +14,7 @@ export const ContentError = () => {
                     <h1 className={styles.conteiner_texts_white}>The rocket team</h1>
                     <h1 className={styles.conteiner_texts_black}>has won this time.</h1>
                 </article>
-                <button className={styles.conteiner_button}> <NavLink to={`/`} className={styles.conteiner_button_link}>Return</NavLink></button>
+                <NavLink to={`/`} className={styles.conteiner_button_link}><button className={styles.conteiner_button}>Return</button> </NavLink>
             </article>
         </section>
     )
