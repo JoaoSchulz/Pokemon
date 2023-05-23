@@ -5,7 +5,7 @@ import styles from './styles.module.css'
 
 export const CardPokemon = () => {
     const [Pokemon, setPokemon] = useState<Pokemon[]>([])
-    const [xebas, setXebas] = useState<typeof changeColors[]>([])
+    const [colorsType, set] = useState<typeof changeColors[]>([])
 
     async function GetInfoPokemons(url: string): Promise<RequestPokemon> {
         const response = await api.get(url)
@@ -52,9 +52,9 @@ export const CardPokemon = () => {
 
     const changeColors = {
 
-        Stile:'#A1A1A1',
-        dark:'#A1A1A1',
-        rock:'#A1A1A1',
+        Stile: '#A1A1A1',
+        dark: '#A1A1A1',
+        rock: '#A1A1A1',
         grass: '#70A83B',
         bug: '#70A83B',
         ice: '#A2CFF0',
@@ -72,7 +72,8 @@ export const CardPokemon = () => {
         electric: '#F7C545'
     }
 
-    
+
+
 
     return (
         <article className={styles.conteiner_Pokemon_Card}>
