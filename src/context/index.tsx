@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 import { Pokemon } from '../models/pokemon'
 
 type PokemonContextProviderProps = {
@@ -12,8 +12,16 @@ export type PokemonContextProps = {
 
 const DEFAULT_VALUE = {
     pokemonState: [],
-    setPokemonState: () => [{}], 
+    setPokemonState: () => [{}],
 }
 
-const ToDoContext = createContext<PokemonContextProps>(DEFAULT_VALUE);
+const PokemonContext = createContext<PokemonContextProps>(DEFAULT_VALUE);
 
+const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
+    const [pokemonState, setPokemonState] = useState<Pokemon[]>([]);
+    return (
+        <PokemonContext.Provider value={{ pokemonState, setPokemonState }}>
+            {children}
+        </PokemonContext.Provider>
+    )
+} 
