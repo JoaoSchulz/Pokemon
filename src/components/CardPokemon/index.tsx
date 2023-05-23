@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Pokemon, RequestPokemon } from "../../models/pokemon";
 import api from "../../services/api";
+import styles from './styles.module.css'
 
 export const CardPokemon = () => {
     const [Pokemon, setPokemon] = useState<Pokemon[]>([])
@@ -53,7 +54,7 @@ export const CardPokemon = () => {
             <img src={poke.image} alt="" /> 
         ))}*/
         <article>
-            <article className={}>
+            <article className={styles.conteiner_card}>
                 <article>
                     <article>
                         <h1>nome</h1>
