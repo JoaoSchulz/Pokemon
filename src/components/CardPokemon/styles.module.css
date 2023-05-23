@@ -92,7 +92,7 @@
 }
 
 .card_type_value {
-    background: #73D677;
+    background: var(--colorTypeBackground);
     box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.18);
     border-radius: 11px;
 
@@ -117,7 +117,7 @@
     height: 140px;
 
     border-radius: 0px 8px 8px 0px;
-    background-color: #73D677;
+    background-color: var(--colorTypeBackground);
 
     display: flex;
     align-items: center;
@@ -126,6 +126,7 @@
     overflow: hidden;
 
 }
+
 
 .conteiner_card_img{
     width: 187px;
