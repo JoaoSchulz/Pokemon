@@ -68,8 +68,8 @@ export const CardPokemon = () => {
                         <p>Defense</p>
                     </article>
                     <article className={styles.card_type}>
-                        <div className={styles.card_type_value}>TYPE1</div>
-                        <div>TYPE2</div>
+                        <div className={styles.card_type_value}>type1</div>
+                        <div className={styles.card_type_value}>type1</div>
                     </article>
                 </article>
                 <article className={styles.conteiner_card_right}>
