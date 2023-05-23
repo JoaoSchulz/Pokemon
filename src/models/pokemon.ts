@@ -18,4 +18,3 @@ export type Pokemon = {
     attack: number
     defense: number
 }
-"
