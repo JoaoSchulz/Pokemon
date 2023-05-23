@@ -1,3 +1,4 @@
+import { CardPokemon } from '../CardPokemon'
 import styles from './styles.module.css'
 
 export const ContentPokedex = () => {
@@ -9,6 +10,7 @@ export const ContentPokedex = () => {
             <article>
                 <input type="text" placeholder='Encuentra tu pokémon...' className={styles.search}/>
             </article>
+            <CardPokemon/>
         </article>
     )
 }
