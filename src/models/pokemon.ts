@@ -1,8 +1,8 @@
 type PokemonType = {
-    type: string
+    type: string,
 }
 
-export type Request = {
+export type RequestPokemon = {
     id: number;
     types: PokemonType[]
     image: string
