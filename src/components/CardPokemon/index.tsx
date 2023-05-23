@@ -55,20 +55,24 @@ export const CardPokemon = () => {
         ))}*/
         <article className={styles.conteiner_Pokemon_Card}>
             <article className={styles.conteiner_card}>
-                <article>
-                    <article>
+                <article className={styles.conteiner_card_left}>
+                    <article className={styles.card_name}>
                         <h1>nome</h1>
                     </article>
-                    <article>
-                        <div>400</div>
-                        <div>40</div>
+                    <article className={styles.card_divs}>
+                        <div className={styles.card_atribute_value}>400</div>
+                        <div className={styles.card_atribute_value}>40</div>
                     </article>
-                    <article>
+                    <article className={styles.card_atribute}>
                         <p>Attack</p>
                         <p>Defense</p>
                     </article>
+                    <article className={styles.card_type}>
+                        <div className={styles.card_type_value}>TYPE1</div>
+                        <div>TYPE2</div>
+                    </article>
                 </article>
-                <article>
+                <article className={styles.conteiner_card_right}>
                     <img src="" alt="" />
                 </article>
             </article>

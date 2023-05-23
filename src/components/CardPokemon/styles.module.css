@@ -1,7 +1,8 @@
-.conteiner_Pokemon_Card{
+.conteiner_Pokemon_Card {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .conteiner_card {
@@ -10,8 +11,86 @@
 
     background: #F6F7F9;
     border-radius: 8px;
-    
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+
+    margin-top: 20%;
+}
+
+.conteiner_card_left {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+
+    margin-left: 7px;
+}
+
+.card_name {
+    text-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 21px;
+
+    color: #212121;
+}
+
+.card_divs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    margin-top: 10px;
+
+    gap: 20px;
+}
+
+.card_atribute_value {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #212121;
+    border-radius: 999px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card_atribute {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    gap: 15px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+
+    color: #4B4B4B;
+}
+
+.card_type{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.conteiner_card_right {
+    width: 235px;
+    height: 140px;
+
+    border-radius: 0px 8px 8px 0px;
+
+    background: linear-gradient(270deg, #F2CB07 0.15%, #F2B807 100%);;
 }
