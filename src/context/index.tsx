@@ -2,7 +2,7 @@ import { createContext, useState } from 'react';
 import { Pokemon } from '../models/pokemon'
 
 type PokemonContextProviderProps = {
-    children.React.ReactNode
+    children:React.ReactNode
 }
 
 export type PokemonContextProps = {
@@ -25,3 +25,7 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
         </PokemonContext.Provider>
     )
 } 
+
+export default PokemonContext;
+
+export {PokemonContextProvider};
