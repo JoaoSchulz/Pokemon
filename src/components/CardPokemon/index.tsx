@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Pokemon, RequestPokemon } from "../../models/pokemon";
+import { Pokemon, RequestPokemon} from "../../models/pokemon";
 import api from "../../services/api";
 import styles from './styles.module.css'
 
@@ -65,8 +65,8 @@ export const CardPokemon = () => {
                             <p>Defense</p>
                         </article>
                         <article className={styles.card_type}>
-                            <div className={styles.card_type_value}>type1</div>
-                            <div className={styles.card_type_value}>type1</div>
+                            <div className={styles.card_type_value}>{poke.types[0].type.name}</div>
+                            <div className={styles.card_type_value}>{poke.types[0].type.name}</div>
                         </article>
                     </article>
                     <article className={styles.conteiner_card_right}>
