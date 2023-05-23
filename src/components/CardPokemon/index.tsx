@@ -49,33 +49,31 @@ export const CardPokemon = () => {
     }, [])
 
     return (
-        /*{Pokemon.map((poke) => (
-            <h3>{poke.name}</h3>
-            <img src={poke.image} alt="" /> 
-        ))}*/
         <article className={styles.conteiner_Pokemon_Card}>
-            <article className={styles.conteiner_card}>
-                <article className={styles.conteiner_card_left}>
-                    <article className={styles.card_name}>
-                        <h1>nome</h1>
+            {Pokemon.map((poke) => (
+                <article className={styles.conteiner_card}>
+                    <article className={styles.conteiner_card_left}>
+                        <article className={styles.card_name}>
+                            <h1>{poke.name}</h1>
+                        </article>
+                        <article className={styles.card_divs}>
+                            <div className={styles.card_atribute_value}>{poke.attack}</div>
+                            <div className={styles.card_atribute_value}>{poke.defense}</div>
+                        </article>
+                        <article className={styles.card_atribute}>
+                            <p>Attack</p>
+                            <p>Defense</p>
+                        </article>
+                        <article className={styles.card_type}>
+                            <div className={styles.card_type_value}>type1</div>
+                            <div className={styles.card_type_value}>type1</div>
+                        </article>
                     </article>
-                    <article className={styles.card_divs}>
-                        <div className={styles.card_atribute_value}>400</div>
-                        <div className={styles.card_atribute_value}>40</div>
-                    </article>
-                    <article className={styles.card_atribute}>
-                        <p>Attack</p>
-                        <p>Defense</p>
-                    </article>
-                    <article className={styles.card_type}>
-                        <div className={styles.card_type_value}>type1</div>
-                        <div className={styles.card_type_value}>type1</div>
+                    <article className={styles.conteiner_card_right}>
+                        <img src={poke.image} alt="Imagem do card" className={styles.conteiner_card_img}/>
                     </article>
                 </article>
-                <article className={styles.conteiner_card_right}>
-                    <img src="" alt="" />
-                </article>
-            </article>
+            ))};
         </article>
     )
 }
