@@ -1,3 +1,17 @@
+.conteiner_Pokemon_Card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .conteiner_card {
+    width: 350px;
+    height: 135px;
+
+    background: #F6F7F9;
+    border-radius: 8px;
     
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

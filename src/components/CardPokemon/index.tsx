@@ -53,7 +53,7 @@ export const CardPokemon = () => {
             <h3>{poke.name}</h3>
             <img src={poke.image} alt="" /> 
         ))}*/
-        <article>
+        <article className={styles.conteiner_Pokemon_Card}>
             <article className={styles.conteiner_card}>
                 <article>
                     <article>
