@@ -21,7 +21,7 @@ const router = createBrowserRouter ([
         element: <Pokedex />,
       },
       {
-        path:'/Legendaries',
+        path:"*",
         element: <Erro/>
       }
     ],
