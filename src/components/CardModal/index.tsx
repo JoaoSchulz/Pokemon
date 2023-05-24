@@ -1,26 +1,17 @@
 import Modal from "react-modal";
-import { useState } from "react";
+import { useContext } from "react";
+import ModalContext from "../../context/Modal";
 
 export const CardModal = () => {
 
-    const [modalIsOpen, setIsOpen] = useState(false);
-
-    function openModal() {
-        setIsOpen(true);
-    }
-
-    function closeModal() {
-        setIsOpen(false);
-    }
+    const {modalIsOpen , closeModal} = useContext(ModalContext)
 
     return (
         <article className="">
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
-                className="modal-content"
-            >
-
+                className="modal-content">
             </Modal>
         </article>
     )
