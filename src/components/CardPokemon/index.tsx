@@ -1,63 +1,13 @@
-import { useEffect, useState } from "react";
-import { Pokemon, RequestPokemon } from "../../models/pokemon";
-import api from "../../services/api";
+import { useContext } from "react";
+import {  TypePokemonColor } from "../../models/pokemon";
 import styles from './styles.module.css'
+import PokemonContext from "../../context/Pokemon";
 
-// type CardPokemonProps = {
-//     pokemon:Pokemon;
-// }
-//export const CardPokemon: React.FC<CardPokemonProps> = ({ pokemon }) =>
 export const CardPokemon = () => {
-    const [Pokemon, setPokemon] = useState<Pokemon[]>([])
     
+    const {pokemon} = useContext(PokemonContext)
 
-    async function GetInfoPokemons(url: string): Promise<RequestPokemon> {
-        const response = await api.get(url)
-        const { id, types } = response.data;
-        return {
-            id,
-            types,
-            image: response.data.sprites.other.home.front_default,
-            attack: response.data.stats[1].base_stat,
-            defense: response.data.stats[2].base_stat
-        }
-    }
-
-
-    useEffect(() => {
-        async function getPokemons() {
-            const response = await api.get('pokemon/?limit=9')
-            const { results } = response.data;
-            const pokemonData = await Promise.all(
-                results.map(async (pokemon: Pokemon) => {
-                    const {
-                        id,
-                        types,
-                        image,
-                        attack,
-                        defense
-                    } = await GetInfoPokemons(pokemon.url);
-
-                    return {
-                        name: pokemon.name,
-                        id,
-                        types,
-                        image,
-                        attack,
-                        defense
-                    }
-                })
-            )
-            console.log(pokemonData);
-            setPokemon(pokemonData);
-        }
-        getPokemons()
-    }, [])
-
-    type PokemonType = 'stile' | 'dark' | 'rock' | 'grass' | 'bug' | 'ice' | 'water' | 'fire' | 'fighting' | 'dragon' | 'normal' | 'gosth' | 'poison' | 'psychic' | 'fairy' | 'ghost' | 'ground' | 'electric';
-
-
-    const changeColors: Record<PokemonType, string> = {
+    const changeColors: Record<TypePokemonColor, string> = {
 
         stile: '#A1A1A1',
         dark: '#A1A1A1',
@@ -81,7 +31,7 @@ export const CardPokemon = () => {
 
     return (
         <article className={styles.conteiner_Pokemon_Card}>
-            {Pokemon.map((poke) => (
+            {pokemon.map((poke) => (
                 <article key={poke.id} className={styles.conteiner_card}>
                     <article className={styles.conteiner_card_left}>
                         <article className={styles.card_name}>
@@ -96,11 +46,11 @@ export const CardPokemon = () => {
                             <p>Defense</p>
                         </article>
                         <article className={styles.card_type}>
-                            <div style={{ backgroundColor: changeColors[poke.types[0].type.name as PokemonType] }} className={styles.card_type_value}>{poke.types[0].type.name}</div>
-                            <div style={{ backgroundColor: poke.types.length == 2 ? changeColors[poke.types[1].type.name as PokemonType] : changeColors[poke.types[0].type.name as PokemonType] }} className={styles.card_type_value}>{poke.types.length == 2 ? poke.types[1].type.name : poke.types[0].type.name}</div>
+                            <div style={{ backgroundColor: changeColors[poke.types[0].type.name as TypePokemonColor] }} className={styles.card_type_value}>{poke.types[0].type.name}</div>
+                            <div style={{ backgroundColor: poke.types.length == 2 ? changeColors[poke.types[1].type.name as TypePokemonColor] : changeColors[poke.types[0].type.name as TypePokemonColor] }} className={styles.card_type_value}>{poke.types.length == 2 ? poke.types[1].type.name : poke.types[0].type.name}</div>
                         </article>
                     </article>
-                    <article style={{ backgroundColor: changeColors[poke.types[0].type.name as PokemonType] }} className={styles.conteiner_card_right}>
+                    <article style={{ backgroundColor: changeColors[poke.types[0].type.name as TypePokemonColor] }} className={styles.conteiner_card_right}>
                         <img src={poke.image} alt="Imagem do card" className={styles.conteiner_card_img} />
                     </article>
                 </article>
