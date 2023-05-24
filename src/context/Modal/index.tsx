@@ -7,15 +7,15 @@ type ModalContextProviderProps = {
 export type ModalContextProps = {
     modalIsOpen: boolean,
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-    closeModal: boolean,
-    openModal: boolean
+    closeModal: () => void,
+    openModal: () => void
 }
 
 const DEFAULT_VALUE = {
     modalIsOpen: false,
     setIsOpen: () => [],
-    closeModal: false,
-    openModal: false,
+    closeModal: () => undefined,
+    openModal: () => undefined
 }
 
 const ModalContext = createContext<ModalContextProps>(DEFAULT_VALUE);
@@ -32,7 +32,7 @@ const ModalContextProvider = ({ children }: ModalContextProviderProps) => {
     }
 
     return (
-        <ModalContext.Provider value={{ modalIsOpen, setIsOpen, closeModal}}>
+        <ModalContext.Provider value={{ modalIsOpen, setIsOpen, closeModal, openModal}}>
             {children}
         </ModalContext.Provider>
     )

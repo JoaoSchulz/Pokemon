@@ -4,14 +4,31 @@ import ModalContext from "../../context/Modal";
 
 export const CardModal = () => {
 
-    const {modalIsOpen , closeModal} = useContext(ModalContext)
+    const { modalIsOpen, closeModal, openModal } = useContext(ModalContext)
 
     return (
-        <article className="">
-            <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                className="modal-content">
+        <article>
+            <Modal isOpen={modalIsOpen} onRequestClose={openModal} className="modal-content">
+                <article>
+                    <article>
+                        <article>
+                            <img src="" alt="" />
+                        </article>
+                        <article>
+                            <article>
+                                <article>
+                                    <h1>nome</h1>
+                                    <p>generation</p>
+                                    <p>id</p>
+                                </article>
+                            </article>
+                            <article>
+                                <h2>abilites</h2>
+                                <h2>overgrow</h2>
+                            </article>
+                        </article>
+                    </article>
+                </article>
             </Modal>
         </article>
     )
