@@ -3,8 +3,13 @@ import { Pokemon, RequestPokemon } from "../../models/pokemon";
 import api from "../../services/api";
 import styles from './styles.module.css'
 
+// type CardPokemonProps = {
+//     pokemon:Pokemon;
+// }
+//export const CardPokemon: React.FC<CardPokemonProps> = ({ pokemon }) =>
 export const CardPokemon = () => {
     const [Pokemon, setPokemon] = useState<Pokemon[]>([])
+    
 
     async function GetInfoPokemons(url: string): Promise<RequestPokemon> {
         const response = await api.get(url)

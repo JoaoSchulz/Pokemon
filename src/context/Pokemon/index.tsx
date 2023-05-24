@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react';
-import { Pokemon } from '../models/pokemon'
+import { Pokemon } from '../../models/pokemon'
 
 type PokemonContextProviderProps = {
     children:React.ReactNode
