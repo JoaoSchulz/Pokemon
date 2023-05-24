@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { Pokemon, RequestPokemon } from "../../models/pokemon";
 import api from "../../services/api";
 import styles from './styles.module.css'
+import { CardModal } from "../CardModal";
 
 export const CardPokemon = () => {
     const [Pokemon, setPokemon] = useState<Pokemon[]>([])
-    const [colorsType, set] = useState<typeof changeColors[]>([])
+    const [colorsType, setColorsType] = useState<typeof changeColors[]>([])
 
     async function GetInfoPokemons(url: string): Promise<RequestPokemon> {
         const response = await api.get(url)
@@ -71,9 +72,6 @@ export const CardPokemon = () => {
         ground: '#9B597B',
         electric: '#F7C545'
     }
-
-
-
 
     return (
         <article className={styles.conteiner_Pokemon_Card}>
