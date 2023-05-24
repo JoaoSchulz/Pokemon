@@ -1,5 +1,7 @@
 type PokemonType = {
-    type: string,
+    type: {
+        name:string
+    }
 }
 
 export type RequestPokemon = {
