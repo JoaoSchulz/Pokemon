@@ -5,7 +5,6 @@ import styles from './styles.module.css'
 
 export const CardPokemon = () => {
     const [Pokemon, setPokemon] = useState<Pokemon[]>([])
-    const [colorsType, set] = useState<typeof changeColors[]>([])
 
     async function GetInfoPokemons(url: string): Promise<RequestPokemon> {
         const response = await api.get(url)
@@ -52,7 +51,7 @@ export const CardPokemon = () => {
 
     const changeColors = {
 
-        Stile: '#A1A1A1',
+        stile: '#A1A1A1',
         dark: '#A1A1A1',
         rock: '#A1A1A1',
         grass: '#70A83B',
@@ -64,7 +63,7 @@ export const CardPokemon = () => {
         dragon: '#F76745',
         normal: '#76AADB',
         gosth: '#76AADB',
-        posion: '#A974BC',
+        poison: '#A974BC',
         psychic: '#A974BC',
         fairy: '#A974BC',
         ghost: '#A974BC',
@@ -72,13 +71,10 @@ export const CardPokemon = () => {
         electric: '#F7C545'
     }
 
-
-
-
     return (
         <article className={styles.conteiner_Pokemon_Card}>
             {Pokemon.map((poke) => (
-                <article className={styles.conteiner_card}>
+                <article key={poke.id} className={styles.conteiner_card}>
                     <article className={styles.conteiner_card_left}>
                         <article className={styles.card_name}>
                             <h1>{poke.name}</h1>
@@ -92,11 +88,11 @@ export const CardPokemon = () => {
                             <p>Defense</p>
                         </article>
                         <article className={styles.card_type}>
-                            <div className={styles.card_type_value}>{poke.types[0].type.name}</div>
-                            <div className={styles.card_type_value}>{poke.types.length == 2 ? poke.types[1].type.name : poke.types[0].type.name}</div>
+                            <div style={{ backgroundColor: changeColors[poke.types[0].type.name] }} className={styles.card_type_value}>{poke.types[0].type.name}</div>
+                            <div style={{ backgroundColor: poke.types.length == 2 ? changeColors[poke.types[1].type.name] : changeColors[poke.types[0].type.name] }} className={styles.card_type_value}>{poke.types.length == 2 ? poke.types[1].type.name : poke.types[0].type.name}</div>
                         </article>
                     </article>
-                    <article className={styles.conteiner_card_right}>
+                    <article style={{ backgroundColor: changeColors[poke.types[0].type.name] }} className={styles.conteiner_card_right}>
                         <img src={poke.image} alt="Imagem do card" className={styles.conteiner_card_img} />
                     </article>
                 </article>
