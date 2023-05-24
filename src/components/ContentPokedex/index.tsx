@@ -8,7 +8,7 @@ export const ContentPokedex = () => {
 
     const [Pokemon, setPokemon] = useState<Pokemon[]>([])
     const [count, setCount] = useState<number>(0);
-    const [search, setSearch] = useState<string>("");
+    // const [search, setSearch] = useState<string>("");
 
     async function GetInfoPokemons(url: string): Promise<RequestPokemon> {
         const response = await api.get(url)
@@ -54,8 +54,8 @@ export const ContentPokedex = () => {
         getPokemons()
     }, []);
 
-    const filterPokemon = Pokemon.filter((poke) =>
-        poke.name.toLowerCase().includes(search.toLowerCase()));
+    // const filterPokemon = Pokemon.filter((poke) =>
+    //     poke.name.toLowerCase().includes(search.toLowerCase()));
 
     return (
         <article className={styles.conteiner}>
@@ -67,15 +67,15 @@ export const ContentPokedex = () => {
                     <input
                         type="text"
                         placeholder='Encuentra tu pokémon...'
-                        className={styles.search}
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)} />
+                        className={styles.search}/>
+                        {/* value={search}
+                        onChange={(e) => setSearch(e.target.value)} */}
                 </article>
             </article>
-            <CardPokemon/>
-            {/* {filterPokemon.map((poke) => (
+            <CardPokemon />
+             {/* {filterPokemon.map((poke) => (
                 <CardPokemon key={poke.id} pokemon={poke}/>
-            ))} */}
+            ))}  */}
         </article>
     )
 }
