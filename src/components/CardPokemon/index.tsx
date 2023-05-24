@@ -49,7 +49,10 @@ export const CardPokemon = () => {
         getPokemons()
     }, [])
 
-    const changeColors = {
+    type PokemonType = 'stile' | 'dark' | 'rock' | 'grass' | 'bug' | 'ice' | 'water' | 'fire' | 'fighting' | 'dragon' | 'normal' | 'gosth' | 'poison' | 'psychic' | 'fairy' | 'ghost' | 'ground' | 'electric';
+
+
+    const changeColors: Record<PokemonType, string> = {
 
         stile: '#A1A1A1',
         dark: '#A1A1A1',
@@ -88,11 +91,11 @@ export const CardPokemon = () => {
                             <p>Defense</p>
                         </article>
                         <article className={styles.card_type}>
-                            <div style={{ backgroundColor: changeColors[poke.types[0].type.name] }} className={styles.card_type_value}>{poke.types[0].type.name}</div>
-                            <div style={{ backgroundColor: poke.types.length == 2 ? changeColors[poke.types[1].type.name] : changeColors[poke.types[0].type.name] }} className={styles.card_type_value}>{poke.types.length == 2 ? poke.types[1].type.name : poke.types[0].type.name}</div>
+                            <div style={{ backgroundColor: changeColors[poke.types[0].type.name as PokemonType] }} className={styles.card_type_value}>{poke.types[0].type.name}</div>
+                            <div style={{ backgroundColor: poke.types.length == 2 ? changeColors[poke.types[1].type.name as PokemonType] : changeColors[poke.types[0].type.name as PokemonType] }} className={styles.card_type_value}>{poke.types.length == 2 ? poke.types[1].type.name : poke.types[0].type.name}</div>
                         </article>
                     </article>
-                    <article style={{ backgroundColor: changeColors[poke.types[0].type.name] }} className={styles.conteiner_card_right}>
+                    <article style={{ backgroundColor: changeColors[poke.types[0].type.name as PokemonType] }} className={styles.conteiner_card_right}>
                         <img src={poke.image} alt="Imagem do card" className={styles.conteiner_card_img} />
                     </article>
                 </article>
