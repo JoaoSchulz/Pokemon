@@ -1,13 +1,14 @@
 import { useContext } from "react";
-import {  TypePokemonColor } from "../../models/pokemon";
+import {  Pokemon, TypePokemonColor } from "../../models/pokemon";
 import styles from './styles.module.css'
-import PokemonContext from "../../context/Pokemon";
 import ModalContext from "../../context/Modal";
 
-export const CardPokemon = () => {
-    
-    const {pokemon} = useContext(PokemonContext)
+type CardPokemonProps = {
+    pokemon:Pokemon[];
+}
 
+export const CardPokemon: React.FC<CardPokemonProps> = ({ pokemon }) => {
+    
     const {openModal} = useContext(ModalContext)
 
     const changeColors: Record<TypePokemonColor, string> = {

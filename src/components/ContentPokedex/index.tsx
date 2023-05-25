@@ -6,7 +6,10 @@ import { CardModal } from '../CardModal';
 
 export const ContentPokedex = () => {
 
-    const { count } = useContext(PokemonContext)
+    const { pokemon, count, search, setSearch } = useContext(PokemonContext)
+
+    const filtPokemon = pokemon.filter((poke) => poke.name.toLowerCase().includes(search.toLowerCase()));
+
 
     return (
         <article className={styles.conteiner}>
@@ -18,12 +21,14 @@ export const ContentPokedex = () => {
                     <input
                         type="text"
                         placeholder='Encuentra tu pokémon...'
-                        className={styles.search} />
+                        className={styles.search}
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)} />
                 </article>
             </article>
             <CardModal />
-            <CardPokemon />
-            <button>Carregar mais</button>
+            <CardPokemon pokemon={filtPokemon} />
+            <button className={styles.conteiner_button}>Carregar mais</button>
         </article>
     )
 }
