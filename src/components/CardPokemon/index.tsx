@@ -8,7 +8,7 @@ export const CardPokemon = () => {
     
     const {pokemon} = useContext(PokemonContext)
 
-    const {openModal, closeModal} = useContext(ModalContext)
+    const {openModal} = useContext(ModalContext)
 
     const changeColors: Record<TypePokemonColor, string> = {
 

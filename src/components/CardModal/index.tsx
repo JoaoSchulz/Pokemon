@@ -2,7 +2,7 @@ import Modal from "react-modal";
 import { useContext } from "react";
 import ModalContext from "../../context/Modal";
 import styles from './styles.module.css'
-import  logo  from '../../assets/PokedexSVG/x-symbol-svgrepo-com.svg'
+import logo from '../../assets/PokedexSVG/x-symbol-svgrepo-com.svg'
 
 export const CardModal = () => {
 
