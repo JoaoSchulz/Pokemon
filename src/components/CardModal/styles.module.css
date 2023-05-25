@@ -1,35 +1,15 @@
 .conteiner {
     width: 100%;
     height: 110vh;
-    display: block;
-    position: fixed;
-    left: 0%;
-    right: 0%;
-    top: 0;
-}
-
-.modal-overlay {
     background: #212121;
-    width: 100%;
-    height: 110vh;
-    opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
     left: 0%;
     right: 0%;
     top: 0;
 }
 
-/* .conteiner {
-    width: 100%;
-    height: 110vh;
 
-    opacity: 0.5;
-    position: fixed;
-    left: 0%;
-    right: 0%;
-    top: 0;
-
-} */
 
 .conteiner_card {
     display: flex;
@@ -42,8 +22,8 @@
     background: linear-gradient(180deg, #732119 42.19%, #D93E30 100%);
     border-radius: 16px;
 
-    left: 23%;
-    top: 20%;
+    left: 25%;
+    top: 25%;
     transform: translate(-50%, - 50%);
 }
 

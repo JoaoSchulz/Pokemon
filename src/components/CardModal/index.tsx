@@ -16,7 +16,7 @@ export const CardModal = () => {
             contentLabel="Example-modal"
             overlayClassName="modal-overlay"
             className="modal-content">
-            <article className={styles.conteiner}>
+            <article className={styles.conteiner} onClick={closeModal}>
                 <article className={styles.conteiner_card}>
                     <article className={styles.conteiner_left}>
                         <img alt="" />
