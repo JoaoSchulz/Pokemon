@@ -2,6 +2,7 @@ import { CardPokemon } from '../CardPokemon'
 import { useContext } from "react";
 import styles from './styles.module.css'
 import PokemonContext from '../../context/Pokemon';
+import { CardModal } from '../CardModal';
 
 export const ContentPokedex = () => {
 
