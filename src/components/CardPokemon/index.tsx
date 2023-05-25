@@ -2,10 +2,13 @@ import { useContext } from "react";
 import {  TypePokemonColor } from "../../models/pokemon";
 import styles from './styles.module.css'
 import PokemonContext from "../../context/Pokemon";
+import ModalContext from "../../context/Modal";
 
 export const CardPokemon = () => {
     
     const {pokemon} = useContext(PokemonContext)
+
+    const {openModal, closeModal} = useContext(ModalContext)
 
     const changeColors: Record<TypePokemonColor, string> = {
 
@@ -32,7 +35,7 @@ export const CardPokemon = () => {
     return (
         <article className={styles.conteiner_Pokemon_Card}>
             {pokemon.map((poke) => (
-                <article key={poke.id} className={styles.conteiner_card}>
+                <article key={poke.id} className={styles.conteiner_card} onClick={openModal}>
                     <article className={styles.conteiner_card_left}>
                         <article className={styles.card_name}>
                             <h1>{poke.name}</h1>

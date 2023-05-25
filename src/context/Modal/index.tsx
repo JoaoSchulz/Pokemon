@@ -12,7 +12,7 @@ export type ModalContextProps = {
 }
 
 const DEFAULT_VALUE = {
-    modalIsOpen: true,
+    modalIsOpen: false,
     setIsOpen: () => [],
     closeModal: () => undefined,
     openModal: () => undefined
@@ -21,7 +21,7 @@ const DEFAULT_VALUE = {
 const ModalContext = createContext<ModalContextProps>(DEFAULT_VALUE);
 
 const ModalContextProvider = ({ children }: ModalContextProviderProps) => {
-    const [modalIsOpen, setIsOpen] = useState(true)
+    const [modalIsOpen, setIsOpen] = useState(false)
 
     function openModal() {
         setIsOpen(true);

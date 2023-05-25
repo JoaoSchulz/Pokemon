@@ -1,5 +1,5 @@
 import styles from './styles.module.css'
-import equipeRocket from '../../assets/Error/Team_Rocket.svg'
+import equipeRocket from '../../assets/ErrorSVG/Team_Rocket.svg'
 import { NavLink } from 'react-router-dom'
 
 export const ContentError = () => {
@@ -14,7 +14,9 @@ export const ContentError = () => {
                     <h1 className={styles.conteiner_texts_white}>The rocket team</h1>
                     <h1 className={styles.conteiner_texts_black}>has won this time.</h1>
                 </article>
-                <NavLink to={`/`} className={styles.conteiner_button_link}><button className={styles.conteiner_button}>Return</button> </NavLink>
+                <NavLink to={`/`} className={styles.conteiner_button_link}>
+                    <button className={styles.conteiner_button}>Return</button>
+                </NavLink>
             </article>
         </section>
     )
