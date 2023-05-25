@@ -22,10 +22,6 @@ const router = createBrowserRouter ([
         element: <Pokedex />,
       },
       {
-        path:"/Legendaries",
-        element:<CardModal />
-      },
-      {
         path:"*",
         element: <Erro/>,
       }
