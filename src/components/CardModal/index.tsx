@@ -27,7 +27,7 @@ export const CardModal = () => {
                             <p>generation</p>
                             <span>id</span>
                         </article>
-                        <article>
+                        <article className={styles.conteiner_right_abilites}>
                             <h2>abilites</h2>
                             <h2>overgrow</h2>
                         </article>

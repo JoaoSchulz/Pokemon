@@ -85,5 +85,18 @@
     justify-content: center;
 
     margin-left: 15px;
+}
 
+.conteiner_right_abilites{
+    width: 264px;
+    height: 60px;
+    background-color: white;
+    padding-left: 30px;
+    
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: start;
+
+    margin-left: 30px;
 }
