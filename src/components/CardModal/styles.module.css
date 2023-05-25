@@ -50,6 +50,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    box-shadow: 4px 4px 8px rgba(1, 28, 64, 0.2);
 }
 
 .conteiner_right_name_id {
