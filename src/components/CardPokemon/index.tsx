@@ -11,6 +11,7 @@ export const CardPokemon: React.FC<CardPokemonProps> = ({ pokemon }) => {
     
     const {openModal} = useContext(ModalContext)
 
+
     const changeColors: Record<TypePokemonColor, string> = {
 
         stile: '#A1A1A1',

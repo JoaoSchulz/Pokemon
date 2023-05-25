@@ -12,7 +12,7 @@ export type PokemonContextProps = {
     count: number,
     setCount: React.Dispatch<React.SetStateAction<number>>,
     search: string,
-    setSearch: React.Dispatch<React.SetStateAction<string>>
+    setSearch: React.Dispatch<React.SetStateAction<string>>,
     morePokemon: number,
     setMorePokemon: React.Dispatch<React.SetStateAction<number>>,
 }
@@ -34,7 +34,7 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
     const [pokemon, setPokemon] = useState<Pokemon[]>([]);
     const [count, setCount] = useState<number>(0);
     const [search, setSearch] = useState<string>('');
-    const [morePokemon, setMorePokemon] = useState<number>(0);
+    const [morePokemon, setMorePokemon] = useState<number>(9);
 
     async function GetInfoPokemons(url: string): Promise<RequestPokemon> {
         const response = await api.get(url)
@@ -50,7 +50,7 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
 
     useEffect(() => {
         async function getPokemons() {
-            const response = await api.get('pokemon/?limit=20')
+            const response = await api.get(`pokemon/?limit=${morePokemon}`)
             const { results, count } = response.data;
             const pokemonData = await Promise.all(
                 results.map(async (pokemon: Pokemon) => {
@@ -76,9 +76,7 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
             setCount(count)
         }
         getPokemons()
-    }, []);
-
-    const filtPokemon = pokemon.filter((poke) => poke.name.toLowerCase().includes(search.toLowerCase()));
+    }, [morePokemon]);
 
     return (
         <PokemonContext.Provider
