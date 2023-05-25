@@ -6,7 +6,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Home } from './routes/Home/index.tsx'
 import { Pokedex } from './routes/Pokedex/index.tsx'
 import { Erro } from './routes/Error/index.tsx'
-import { CardModal } from './components/CardModal/index.tsx'
 
 const router = createBrowserRouter ([
   {
@@ -20,10 +19,6 @@ const router = createBrowserRouter ([
       {
         path: "/Pokedex",
         element: <Pokedex />,
-      },
-      {
-        path:"/Legendaries",
-        element:<CardModal />
       },
       {
         path:"*",
