@@ -23,6 +23,7 @@ export const ContentPokedex = () => {
             </article>
             <CardModal />
             <CardPokemon />
+            <button>Carregar mais</button>
         </article>
     )
 }
