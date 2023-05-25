@@ -31,39 +31,39 @@ export const CardModal = () => {
                             <h2>abilites</h2>
                             <h2>overgrow</h2>
                         </article>
+                        <article className={styles.conteiner_right_heal_experience}>
+                            <article className={styles.conteiner_right_heal_experience_content}>
+                                <h1 className={styles.conteiner_right_heal_experience_content_h1}>Healthy Points</h1>
+                                <h2 className={styles.conteiner_right_heal_experience_content_h2}>numero</h2>
+                                <div className={styles.conteiner_right_heal_experience_content_div}></div>
+                            </article>
+                            <article className={styles.conteiner_right_heal_experience_content}>
+                                <h1 className={styles.conteiner_right_heal_experience_content_h1}>Experience</h1>
+                                <h2 className={styles.conteiner_right_heal_experience_content_h2}>numero</h2>
+                                <div className={styles.conteiner_right_heal_experience_content_div1}></div>
+                            </article>
+                        </article>
                         <article>
                             <article>
-                                <h1>healthy</h1>
                                 <h1>numero</h1>
-                                <div></div>
+                                <h1>defense</h1>
                             </article>
                             <article>
-                                <h1>experience</h1>
                                 <h1>numero</h1>
-                                <div></div>
+                                <h1>Attack</h1>
                             </article>
                             <article>
-                                <article>
-                                    <h1>numero</h1>
-                                    <h1>defense</h1>
-                                </article>
-                                <article>
-                                    <h1>numero</h1>
-                                    <h1>Attack</h1>
-                                </article>
-                                <article>
-                                    <h1>numero</h1>
-                                    <h1>Sp Attack</h1>
-                                </article>
-                                <article>
-                                    <h1>numero</h1>
-                                    <h1></h1>
-                                </article>
+                                <h1>numero</h1>
+                                <h1>Sp Attack</h1>
+                            </article>
+                            <article>
+                                <h1>numero</h1>
+                                <h1></h1>
                             </article>
                         </article>
                     </article>
                 </article>
-            </Modal>
+            </Modal >
         </article>
     )
 }
