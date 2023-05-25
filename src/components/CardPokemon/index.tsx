@@ -5,7 +5,7 @@ import PokemonContext from "../../context/Pokemon";
 
 export const CardPokemon = () => {
     
-    const {pokemon} = useContext(PokemonContext)
+    const {pokemon, handleClick} = useContext(PokemonContext)
 
     const changeColors: Record<TypePokemonColor, string> = {
 
@@ -32,7 +32,7 @@ export const CardPokemon = () => {
     return (
         <article className={styles.conteiner_Pokemon_Card}>
             {pokemon.map((poke) => (
-                <article key={poke.id} className={styles.conteiner_card}>
+                <article key={poke.id} className={styles.conteiner_card} onClick={handleClick}>
                     <article className={styles.conteiner_card_left}>
                         <article className={styles.card_name}>
                             <h1>{poke.name}</h1>

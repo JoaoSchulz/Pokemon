@@ -10,8 +10,8 @@ export type PokemonContextProps = {
     pokemon: Pokemon[],
     setPokemon: React.Dispatch<React.SetStateAction<Pokemon[]>>,
     count: number,
-    setCount: React.Dispatch<React.SetStateAction<number>>;
-
+    setCount: React.Dispatch<React.SetStateAction<number>>,
+    handleClick: () => void,
 }
 
 const DEFAULT_VALUE = {
@@ -19,6 +19,7 @@ const DEFAULT_VALUE = {
     setPokemon: () => [{}],
     count: 0,
     setCount: () => [],
+    handleClick: () => undefined,
 }
 
 const PokemonContext = createContext<PokemonContextProps>(DEFAULT_VALUE);
@@ -38,7 +39,7 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
             defense: response.data.stats[2].base_stat
         }
     }
-    
+
     useEffect(() => {
         async function getPokemons() {
             const response = await api.get('pokemon/?limit=9')
@@ -64,14 +65,17 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
                 })
             )
             setPokemon(pokemonData);
-            console.log(pokemonData)
             setCount(count)
         }
         getPokemons()
     }, []);
 
+    function handleClick() {
+        console.log()
+    }
+
     return (
-        <PokemonContext.Provider value={{ pokemon, setPokemon, count, setCount }}>
+        <PokemonContext.Provider value={{ pokemon, setPokemon, count, setCount, handleClick }}>
             {children}
         </PokemonContext.Provider>
     )
