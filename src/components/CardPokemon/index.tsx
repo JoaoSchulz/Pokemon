@@ -29,7 +29,8 @@ export const CardPokemon = () => {
         fairy: '#A974BC',
         ghost: '#A974BC',
         ground: '#9B597B',
-        electric: '#F7C545'
+        electric: '#F7C545',
+        flying: 'E8F9F5'
     }
 
     return (
