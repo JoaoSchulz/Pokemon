@@ -3,10 +3,14 @@ import { useContext } from "react";
 import styles from './styles.module.css'
 import PokemonContext from '../../context/Pokemon';
 import { CardModal } from '../CardModal';
+import bola from '../../assets/PokedexSVG/png-transparent-poke-ball-pokemon-pokemon-rim-mobile-phones-pokemon-removebg-preview.png'
 
 export const ContentPokedex = () => {
 
-    const { count } = useContext(PokemonContext)
+    const { pokemon, count, search, setSearch, morePokemon, setMorePokemon } = useContext(PokemonContext)
+
+    const filtPokemon = pokemon.filter((poke) => poke.name.toLowerCase().includes(search.toLowerCase()));
+
 
     return (
         <article className={styles.conteiner}>
@@ -18,11 +22,15 @@ export const ContentPokedex = () => {
                     <input
                         type="text"
                         placeholder='Encuentra tu pokémon...'
-                        className={styles.search} />
+                        className={styles.search}
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)} />
                 </article>
             </article>
             <CardModal />
-            <CardPokemon />
+            <CardPokemon pokemon={filtPokemon} />
+            <button className={styles.conteiner_button} onClick={() => setMorePokemon(morePokemon + 12)}
+            type='submit'> <img className={styles.image_button} src={bola} alt="Foto da pokebola" /> </button>
         </article>
     )
 }

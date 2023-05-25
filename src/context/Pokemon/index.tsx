@@ -11,6 +11,10 @@ export type PokemonContextProps = {
     setPokemon: React.Dispatch<React.SetStateAction<Pokemon[]>>,
     count: number,
     setCount: React.Dispatch<React.SetStateAction<number>>,
+    search: string,
+    setSearch: React.Dispatch<React.SetStateAction<string>>,
+    morePokemon: number,
+    setMorePokemon: React.Dispatch<React.SetStateAction<number>>,
 }
 
 const DEFAULT_VALUE = {
@@ -18,6 +22,10 @@ const DEFAULT_VALUE = {
     setPokemon: () => [{}],
     count: 0,
     setCount: () => [],
+    search: '',
+    setSearch: () => '',
+    morePokemon: 0,
+    setMorePokemon: () => []
 }
 
 const PokemonContext = createContext<PokemonContextProps>(DEFAULT_VALUE);
@@ -25,6 +33,8 @@ const PokemonContext = createContext<PokemonContextProps>(DEFAULT_VALUE);
 const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
     const [pokemon, setPokemon] = useState<Pokemon[]>([]);
     const [count, setCount] = useState<number>(0);
+    const [search, setSearch] = useState<string>('');
+    const [morePokemon, setMorePokemon] = useState<number>(9);
 
     async function GetInfoPokemons(url: string): Promise<RequestPokemon> {
         const response = await api.get(url)
@@ -40,7 +50,7 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
 
     useEffect(() => {
         async function getPokemons() {
-            const response = await api.get('pokemon/?limit=20')
+            const response = await api.get(`pokemon/?limit=${morePokemon}`)
             const { results, count } = response.data;
             const pokemonData = await Promise.all(
                 results.map(async (pokemon: Pokemon) => {
@@ -66,10 +76,11 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
             setCount(count)
         }
         getPokemons()
-    }, []);
+    }, [morePokemon]);
 
     return (
-        <PokemonContext.Provider value={{ pokemon, setPokemon, count, setCount}}>
+        <PokemonContext.Provider
+            value={{ pokemon, setPokemon, count, setCount, morePokemon, setMorePokemon, search, setSearch }}>
             {children}
         </PokemonContext.Provider>
     )
