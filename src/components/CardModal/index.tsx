@@ -22,12 +22,10 @@ export const CardModal = () => {
                         <img alt="" />
                     </article>
                     <article className={styles.conteiner_right}>
-                        <article>
-                            <article className={styles.conteiner_right_name_id}>
-                                <h1>nome</h1>
-                                <p>generation</p>
-                                <span>id</span>
-                            </article>
+                        <article className={styles.conteiner_right_name_id}>
+                            <h1>nome</h1>
+                            <p>generation</p>
+                            <span>id</span>
                         </article>
                         <article>
                             <h2>abilites</h2>

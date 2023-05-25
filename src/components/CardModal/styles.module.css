@@ -45,6 +45,7 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .conteiner_right_name_id h1 {
@@ -66,6 +67,8 @@
     line-height: 30px;
     text-align: center;
 
+    margin-left: 76px;
+
     color: #FDFDFD;
 }
 
@@ -80,5 +83,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    margin-left: 15px;
 
 }
