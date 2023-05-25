@@ -1,0 +1,49 @@
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 70px;
+    position: relative;
+
+    background: #F5DB13;
+    box-shadow: 0px 4px 16px rgba(1, 28, 64, 0.2);
+}
+
+.menu {
+    display: inline-block;
+}
+
+.menu_ul {
+    margin: 0;
+    padding: 0;
+}
+
+.menu_li {
+    display: inline-block;
+    margin-right: 25px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 29px;
+}
+
+.menu_li_a {
+    color: #111;
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+.active {
+    color: #111;
+    text-decoration: underline;
+    padding-left: 20px;
+}
+
+.inactive {
+    color: #111;
+    text-decoration: none;
+    padding-left: 20px;
+}
