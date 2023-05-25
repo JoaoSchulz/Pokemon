@@ -168,3 +168,41 @@
     background: linear-gradient(180deg, #F5DB13 0%, #F2B807 100%);
     border-radius: 8px;
 }
+
+.conteiner_right_atribute {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 50px;
+    gap: 22px;
+}
+
+.conteiner_right_atribute_values {
+    width: 82px;
+    height: 70px;
+
+    background: #FDFDFD;
+
+    box-shadow: 4px 4px 24px rgba(1, 17, 38, 0.2);
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.conteiner_right_atribute_values_div {
+    width: 35px;
+    height: 36px;
+
+    border: 3px solid #212121;
+    border-radius: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 5px;
+}

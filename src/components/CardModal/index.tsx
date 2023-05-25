@@ -43,22 +43,22 @@ export const CardModal = () => {
                                 <div className={styles.conteiner_right_heal_experience_content_div1}></div>
                             </article>
                         </article>
-                        <article>
-                            <article>
-                                <h1>numero</h1>
+                        <article className={styles.conteiner_right_atribute}>
+                            <article className={styles.conteiner_right_atribute_values}>
+                                <div className={styles.conteiner_right_atribute_values_div}>2</div>
                                 <h1>defense</h1>
                             </article>
-                            <article>
-                                <h1>numero</h1>
+                            <article className={styles.conteiner_right_atribute_values}>
+                                <div className={styles.conteiner_right_atribute_values_div}>2</div>
                                 <h1>Attack</h1>
                             </article>
-                            <article>
-                                <h1>numero</h1>
-                                <h1>Sp Attack</h1>
+                            <article className={styles.conteiner_right_atribute_values}>
+                                <div className={styles.conteiner_right_atribute_values_div}>2</div>
+                                <h1>SpAttack</h1>
                             </article>
-                            <article>
-                                <h1>numero</h1>
-                                <h1></h1>
+                            <article className={styles.conteiner_right_atribute_values}>
+                                <div className={styles.conteiner_right_atribute_values_div}>2</div>
+                                <h1>SpDefende</h1>
                             </article>
                         </article>
                     </article>
