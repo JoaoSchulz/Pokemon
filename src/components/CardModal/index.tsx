@@ -3,20 +3,20 @@ import { useContext } from "react";
 import ModalContext from "../../context/Modal";
 import styles from './styles.module.css'
 import PokemonContext from "../../context/Pokemon";
+import  logo  from '../../assets/PokedexSVG/x-symbol-svgrepo-com.svg'
 
 export const CardModal = () => {
 
     const { modalIsOpen, closeModal } = useContext(ModalContext)
-    const { pokemon } = useContext(PokemonContext)
 
     return (
-        <article className={styles.conteiner}>
-            <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                contentLabel="Example-modal"
-                overlayClassName="modal-overlay"
-                className="modal-content">
+        <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            contentLabel="Example-modal"
+            overlayClassName="modal-overlay"
+            className="modal-content">
+            <article className={styles.conteiner}>
                 <article className={styles.conteiner_card}>
                     <article className={styles.conteiner_left}>
                         <img alt="" />
@@ -26,6 +26,7 @@ export const CardModal = () => {
                             <h1>nome</h1>
                             <p>generation</p>
                             <span>id</span>
+                            <img src={logo} alt="" onClick={closeModal}/>
                         </article>
                         <article className={styles.conteiner_right_abilites}>
                             <h2>abilites</h2>
@@ -63,7 +64,7 @@ export const CardModal = () => {
                         </article>
                     </article>
                 </article>
-            </Modal >
-        </article>
+            </article>
+        </Modal >
     )
 }

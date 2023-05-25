@@ -1,5 +1,5 @@
 import styles from './styles.module.css'
-import equipeRocket from '../../assets/Error/Team_Rocket.svg'
+import equipeRocket from '../../assets/ErrorSVG/Team_Rocket.svg'
 import { NavLink } from 'react-router-dom'
 
 export const ContentError = () => {
