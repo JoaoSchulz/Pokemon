@@ -29,8 +29,8 @@ export const ContentPokedex = () => {
             </article>
             <CardModal />
             <CardPokemon pokemon={filtPokemon} />
-            <button className={styles.conteiner_button} onClick={() => setMorePokemon(morePokemon + 9)}
-            type='submit'> <img className={styles.image_button} src={bola} alt="" /> </button>
+            <button className={styles.conteiner_button} onClick={() => setMorePokemon(morePokemon + 12)}
+            type='submit'> <img className={styles.image_button} src={bola} alt="Foto da pokebola" /> </button>
         </article>
     )
 }
