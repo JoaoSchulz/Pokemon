@@ -1,6 +1,9 @@
 .conteiner {
     width: 100%;
     height: 100vh;
+
+    background: #212121;
+    opacity: 0.5;
 }
 
 .conteiner_card {
@@ -26,9 +29,14 @@
     align-items: center;
     justify-content: center;
 
-    background-color: aqua;
     width: 50%;
     height: 100%;
+
+    background: linear-gradient(270deg, #B33327 0.15%, #D93E30 100%);
+
+    box-shadow: 4px 4px 8px rgba(1, 28, 64, 0.2);
+    border-radius: 0px 8px 8px 0px;
+    transform: rotate(-180deg);
 }
 
 .conteiner_right {
@@ -88,7 +96,7 @@
 }
 
 .conteiner_right_abilites {
-    width: 60%;
+    width: 264px;
     height: 60px;
     background-color: white;
 
@@ -98,7 +106,7 @@
     flex-direction: column;
     justify-content: center;
 
-    margin-right: 145px;
+    margin-right: 137px;
     padding-inline-start: 25px;
 
     background: #FDFDFD;
@@ -174,8 +182,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    margin-top: 50px;
-    gap: 22px;
+    margin-top: 20px;
+    gap: 25px;
 }
 
 .conteiner_right_atribute_values {

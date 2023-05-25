@@ -29,7 +29,7 @@ export const CardModal = () => {
                         </article>
                         <article className={styles.conteiner_right_abilites}>
                             <h2>abilites</h2>
-                            <h2>overgrow</h2>
+                            <h2>Overgrow - Chlorophyll</h2>
                         </article>
                         <article className={styles.conteiner_right_heal_experience}>
                             <article className={styles.conteiner_right_heal_experience_content}>
