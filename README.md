@@ -56,7 +56,7 @@ A entrega deste projeto será feito através de 2 passos
 
 <h3> Veja minha aplicação rodando no netlify no card abaixo</h3>
 
- <a href="" target="_blank"><img src="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7" align="center"></a>
+ <a href="https://deploy-preview-49--melodious-conkies-e24cf5.netlify.app/Pokedex" target="_blank"><img src="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7" align="center"></a>
 
 # Intregantes
 
