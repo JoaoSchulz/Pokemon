@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 import { Pokemon, RequestPokemon } from '../../models/pokemon'
 import api from '../../services/api';
+import styles from '../../components/CardPokemon/styles.module.css'
 
 type PokemonContextProviderProps = {
     children: React.ReactNode
@@ -11,7 +12,6 @@ export type PokemonContextProps = {
     setPokemon: React.Dispatch<React.SetStateAction<Pokemon[]>>,
     count: number,
     setCount: React.Dispatch<React.SetStateAction<number>>,
-    handleClick: () => void,
 }
 
 const DEFAULT_VALUE = {
@@ -19,7 +19,6 @@ const DEFAULT_VALUE = {
     setPokemon: () => [{}],
     count: 0,
     setCount: () => [],
-    handleClick: () => undefined,
 }
 
 const PokemonContext = createContext<PokemonContextProps>(DEFAULT_VALUE);
@@ -42,7 +41,7 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
 
     useEffect(() => {
         async function getPokemons() {
-            const response = await api.get('pokemon/?limit=9')
+            const response = await api.get('pokemon/?limit=20')
             const { results, count } = response.data;
             const pokemonData = await Promise.all(
                 results.map(async (pokemon: Pokemon) => {
@@ -70,12 +69,8 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
         getPokemons()
     }, []);
 
-    function handleClick() {
-        console.log()
-    }
-
     return (
-        <PokemonContext.Provider value={{ pokemon, setPokemon, count, setCount, handleClick }}>
+        <PokemonContext.Provider value={{ pokemon, setPokemon, count, setCount}}>
             {children}
         </PokemonContext.Provider>
     )

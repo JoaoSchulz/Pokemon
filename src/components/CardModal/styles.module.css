@@ -1,16 +1,57 @@
 .conteiner {
     width: 100%;
-    height: 100vh;
+    height: 110vh;
 
     background: #212121;
     opacity: 0.5;
+    display: block;
+    position: fixed;
+    left: 0%;
+    right: 0%;
+    top: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.conteiner_click {
+    width: 100%;
+    height: 110vh;
+
+    background: #212121;
+    opacity: 0.5;
+    display: block;
+    position: fixed;
+    left: 0%;
+    right: 0%;
+    top: 0;
+    overflow: hidden;
 }
 
 .conteiner_card {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    position: absolute;
+    align-self: center;
+    position: fixed;
+    width: 50%;
+    height: 50%;
+
+    background: linear-gradient(180deg, #732119 42.19%, #D93E30 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    visibility: hidden;
+
+    left: 23%;
+    top: 20%;
+    transform: translate(-50%, - 50%);
+}
+
+.conteiner_card_click{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    position: fixed;
     width: 50%;
     height: 50%;
 
