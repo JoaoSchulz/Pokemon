@@ -11,6 +11,8 @@ export type PokemonContextProps = {
     setPokemon: React.Dispatch<React.SetStateAction<Pokemon[]>>,
     count: number,
     setCount: React.Dispatch<React.SetStateAction<number>>,
+    morePokemon: number,
+    setMorePokemon: React.Dispatch<React.SetStateAction<number>>,
 }
 
 const DEFAULT_VALUE = {
@@ -18,6 +20,8 @@ const DEFAULT_VALUE = {
     setPokemon: () => [{}],
     count: 0,
     setCount: () => [],
+    morePokemon: 0,
+    setMorePokemon: () => []
 }
 
 const PokemonContext = createContext<PokemonContextProps>(DEFAULT_VALUE);
@@ -25,6 +29,7 @@ const PokemonContext = createContext<PokemonContextProps>(DEFAULT_VALUE);
 const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
     const [pokemon, setPokemon] = useState<Pokemon[]>([]);
     const [count, setCount] = useState<number>(0);
+    const [morePokemon, setMorePokemon] = useState<number>(0);
 
     async function GetInfoPokemons(url: string): Promise<RequestPokemon> {
         const response = await api.get(url)
@@ -69,7 +74,8 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
     }, []);
 
     return (
-        <PokemonContext.Provider value={{ pokemon, setPokemon, count, setCount}}>
+        <PokemonContext.Provider
+            value={{ pokemon, setPokemon, count, setCount, morePokemon, setMorePokemon }}>
             {children}
         </PokemonContext.Provider>
     )
