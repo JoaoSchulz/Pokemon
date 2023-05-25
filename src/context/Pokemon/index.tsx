@@ -1,7 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
 import { Pokemon, RequestPokemon } from '../../models/pokemon'
 import api from '../../services/api';
-import styles from '../../components/CardPokemon/styles.module.css'
 
 type PokemonContextProviderProps = {
     children: React.ReactNode
