@@ -34,5 +34,3 @@ export const ContentPokedex = () => {
         </article>
     )
 }
-
-//<img className={styles.image_button} src={bola} alt="" />
