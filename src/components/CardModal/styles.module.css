@@ -1,0 +1,44 @@
+.conteiner {
+    width: 100%;
+    height: 100vh;
+}
+
+.conteiner_card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 800px;
+    height: 371px;
+
+    background: linear-gradient(180deg, #732119 42.19%, #D93E30 100%);
+    border-radius: 16px;
+    overflow: hidden;
+
+    left: 23%;
+    top: 20%;
+    transform: translate(-50%, - 50%);
+}
+
+.conteiner_left {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: aqua;
+    width: 50%;
+    height: 100%;
+}
+
+.conteiner_right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 18%;
+}
+
+.conteiner_right_name_{
+
+}

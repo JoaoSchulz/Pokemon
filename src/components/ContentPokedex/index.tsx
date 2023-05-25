@@ -21,7 +21,6 @@ export const ContentPokedex = () => {
                         className={styles.search} />
                 </article>
             </article>
-            <CardModal />
             <CardPokemon />
         </article>
     )

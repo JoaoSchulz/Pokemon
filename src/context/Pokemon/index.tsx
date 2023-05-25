@@ -63,8 +63,8 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
                     }
                 })
             )
-            console.log(count)
             setPokemon(pokemonData);
+            console.log(pokemonData)
             setCount(count)
         }
         getPokemons()
